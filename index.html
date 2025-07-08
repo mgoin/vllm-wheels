@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vLLM Wheels Browser</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 vLLM Wheels Browser</h1>
+            <p>Discover and install vLLM wheels from all available sources</p>
+        </header>
+
+        <div class="stats-container" id="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="total-wheels">-</div>
+                <div class="stat-label">Total Wheels</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="total-sources">-</div>
+                <div class="stat-label">Sources</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="last-updated">-</div>
+                <div class="stat-label">Last Updated</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search wheels, versions, commits..." />
+                <button id="clear-search">Clear</button>
+            </div>
+
+            <div class="filter-container">
+                <label for="source-filter">Source:</label>
+                <select id="source-filter">
+                    <option value="">All Sources</option>
+                    <option value="commit">Commits</option>
+                    <option value="github_release">GitHub Releases</option>
+                    <option value="release_version">Release Versions</option>
+                    <option value="nightly">Nightly</option>
+                </select>
+
+                <label for="python-filter">Python:</label>
+                <select id="python-filter">
+                    <option value="">All Python Versions</option>
+                </select>
+
+                <label for="platform-filter">Platform:</label>
+                <select id="platform-filter">
+                    <option value="">All Platforms</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="source-tabs">
+            <button class="tab-button active" data-source="all">All</button>
+            <button class="tab-button" data-source="commit">Commits</button>
+            <button class="tab-button" data-source="github_release">GitHub Releases</button>
+            <button class="tab-button" data-source="release_version">Release Versions</button>
+            <button class="tab-button" data-source="nightly">Nightly</button>
+        </div>
+
+        <div class="loading" id="loading">Loading wheel data...</div>
+        <div class="error" id="error" style="display: none;"></div>
+
+        <div class="results-container">
+            <div class="results-header">
+                <span id="results-count">0 wheels found</span>
+                <div class="view-toggles">
+                    <button id="view-cards" class="view-toggle active">Cards</button>
+                    <button id="view-table" class="view-toggle">Table</button>
+                </div>
+            </div>
+
+            <div id="results-cards" class="results-grid"></div>
+            <div id="results-table" class="results-table" style="display: none;"></div>
+        </div>
+
+        <footer>
+            <p>
+                Data scraped from <a href="https://wheels.vllm.ai/">wheels.vllm.ai</a> •
+                <a href="https://github.com/mgoin/vllm-wheels">Source Code</a> •
+                <a href="https://github.com/vllm-project/vllm">vLLM Project</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

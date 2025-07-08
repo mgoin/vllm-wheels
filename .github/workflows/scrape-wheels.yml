@@ -1,0 +1,199 @@
+name: Scrape vLLM Wheels
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_commits:
+        description: 'Maximum number of commits to check'
+        required: false
+        default: '50'
+        type: string
+      max_releases:
+        description: 'Maximum number of GitHub releases to check'
+        required: false
+        default: '20'
+        type: string
+      max_versions:
+        description: 'Maximum number of PyPI versions to check'
+        required: false
+        default: '20'
+        type: string
+      wheels_only:
+        description: 'Only include wheel files (no source distributions)'
+        required: false
+        default: true
+        type: boolean
+  schedule:
+    # Run daily at 6 AM UTC
+    - cron: '0 6 * * *'
+
+jobs:
+  scrape-wheels:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Run wheel scraper
+      run: |
+        python3 scrape_vllm_wheels.py \
+          --all-sources \
+          --max-commits ${{ github.event.inputs.max_commits || '50' }} \
+          --max-releases ${{ github.event.inputs.max_releases || '20' }} \
+          --max-versions ${{ github.event.inputs.max_versions || '20' }} \
+          ${{ github.event.inputs.wheels_only == 'true' && '--wheels-only' || '' }} \
+          --output data/wheels.json \
+          --verbose
+    
+    - name: Generate CSV file
+      run: |
+        python3 -c "
+import json
+import csv
+import os
+from datetime import datetime
+
+# Read JSON data
+with open('data/wheels.json', 'r') as f:
+    data = json.load(f)
+
+# Create CSV data
+csv_data = []
+for source_key, files in data.get('results', {}).items():
+    if not files:
+        continue
+    
+    for file_info in files:
+        if file_info.get('type') != 'wheel':
+            continue
+            
+        # Determine source type and metadata
+        source_type = 'commit'
+        source_info = source_key
+        install_command = ''
+        
+        if source_key.startswith('release_'):
+            source_type = 'github_release'
+            source_info = source_key.replace('release_', '')
+            install_command = f'uv pip install {file_info.get(\"url\", \"\")} --torch-backend auto'
+        elif source_key.startswith('version_'):
+            source_type = 'release_version'
+            source_info = source_key.replace('version_', '')
+            install_command = f'uv pip install -U vllm=={source_info} --extra-index-url https://wheels.vllm.ai/{source_info} --torch-backend auto'
+        elif source_key == 'nightly':
+            source_type = 'nightly'
+            source_info = 'nightly'
+            install_command = 'uv pip install vllm --extra-index-url https://wheels.vllm.ai/nightly --torch-backend auto'
+        else:
+            # Regular commit
+            install_command = f'uv pip install vllm --extra-index-url https://wheels.vllm.ai/{source_key} --torch-backend auto'
+        
+        csv_data.append({
+            'filename': file_info.get('filename', ''),
+            'source_type': source_type,
+            'source_info': source_info,
+            'version': file_info.get('version', ''),
+            'python_tag': file_info.get('python_tag', ''),
+            'abi_tag': file_info.get('abi_tag', ''),
+            'platform_tag': file_info.get('platform_tag', ''),
+            'url': file_info.get('url', ''),
+            'install_command': install_command,
+            'commit': file_info.get('commit', ''),
+            'release_tag': file_info.get('release_tag', ''),
+            'size': file_info.get('size', ''),
+            'scraped_at': data.get('scrape_time', '')
+        })
+
+# Write CSV file
+os.makedirs('data', exist_ok=True)
+with open('data/wheels.csv', 'w', newline='') as f:
+    if csv_data:
+        writer = csv.DictWriter(f, fieldnames=csv_data[0].keys())
+        writer.writeheader()
+        writer.writerows(csv_data)
+    else:
+        # Write empty CSV with headers
+        writer = csv.writer(f)
+        writer.writerow(['filename', 'source_type', 'source_info', 'version', 'python_tag', 'abi_tag', 'platform_tag', 'url', 'install_command', 'commit', 'release_tag', 'size', 'scraped_at'])
+
+print(f'Generated CSV with {len(csv_data)} wheel entries')
+"
+    
+    - name: Generate summary stats
+      run: |
+        python3 -c "
+import json
+import os
+from datetime import datetime
+
+# Read JSON data
+with open('data/wheels.json', 'r') as f:
+    data = json.load(f)
+
+# Calculate statistics
+stats = {
+    'last_updated': datetime.now().isoformat(),
+    'total_sources': len(data.get('results', {})),
+    'total_files': sum(len(files) for files in data.get('results', {}).values()),
+    'total_wheels': 0,
+    'source_counts': {
+        'commits': 0,
+        'github_releases': 0,
+        'nightly': 0,
+        'release_versions': 0
+    },
+    'python_versions': {},
+    'platforms': {}
+}
+
+# Count by source type and collect metadata
+for source_key, files in data.get('results', {}).items():
+    wheel_files = [f for f in files if f.get('type') == 'wheel']
+    stats['total_wheels'] += len(wheel_files)
+    
+    if source_key.startswith('release_'):
+        stats['source_counts']['github_releases'] += 1
+    elif source_key.startswith('version_'):
+        stats['source_counts']['release_versions'] += 1
+    elif source_key == 'nightly':
+        stats['source_counts']['nightly'] += 1
+    else:
+        stats['source_counts']['commits'] += 1
+    
+    # Count Python versions and platforms
+    for file_info in wheel_files:
+        py_tag = file_info.get('python_tag', 'unknown')
+        platform_tag = file_info.get('platform_tag', 'unknown')
+        
+        stats['python_versions'][py_tag] = stats['python_versions'].get(py_tag, 0) + 1
+        stats['platforms'][platform_tag] = stats['platforms'].get(platform_tag, 0) + 1
+
+# Write stats file
+os.makedirs('data', exist_ok=True)
+with open('data/stats.json', 'w') as f:
+    json.dump(stats, f, indent=2)
+
+print(f'Generated stats: {stats[\"total_wheels\"]} wheels from {stats[\"total_sources\"]} sources')
+"
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/
+        
+        # Check if there are changes to commit
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update wheel data - $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          git push
+        fi 

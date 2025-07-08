@@ -1,0 +1,27 @@
+{
+    "scrape_time": "2024-01-01T12:00:00.000000",
+    "base_url": "https://wheels.vllm.ai/",
+    "mode": "all_sources",
+    "sources": {
+        "commits": 0,
+        "github_releases": 0,
+        "nightly": 0,
+        "release_versions": 0
+    },
+    "results": {
+        "sample_commit": [
+            {
+                "filename": "vllm-1.0.0.dev-cp38-abi3-manylinux1_x86_64.whl",
+                "type": "wheel",
+                "name": "vllm",
+                "version": "1.0.0.dev",
+                "python_tag": "cp38",
+                "abi_tag": "abi3",
+                "platform_tag": "manylinux1_x86_64",
+                "url": "https://wheels.vllm.ai/sample_commit/vllm-1.0.0.dev-cp38-abi3-manylinux1_x86_64.whl",
+                "commit": "sample_commit",
+                "source": "commit"
+            }
+        ]
+    }
+}
