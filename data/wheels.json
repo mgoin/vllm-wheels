@@ -1,10 +1,10 @@
 {
-  "scrape_time": "2025-07-19T06:05:41.915849",
+  "scrape_time": "2025-07-20T06:06:12.262620",
   "base_url": "https://wheels.vllm.ai/",
   "mode": "multi-source",
   "sources": {
     "commits": 0,
-    "github_releases": 15,
+    "github_releases": 14,
     "nightly": 1,
     "release_versions": 4
   },
@@ -597,47 +597,17 @@
         "size": 264277381
       }
     ],
-    "release_v0.7.1": [
-      {
-        "filename": "vllm-0.7.1+cu118-cp38-abi3-manylinux1_x86_64.whl",
-        "type": "wheel",
-        "name": "vllm",
-        "version": "0.7.1+cu118",
-        "build_tag": null,
-        "python_tag": "cp38",
-        "abi_tag": "abi3",
-        "platform_tag": "manylinux1_x86_64",
-        "url": "https://github.com/vllm-project/vllm/releases/download/v0.7.1/vllm-0.7.1%2Bcu118-cp38-abi3-manylinux1_x86_64.whl",
-        "source": "github_release",
-        "release_tag": "v0.7.1",
-        "size": 197494317
-      },
-      {
-        "filename": "vllm-0.7.1-cp38-abi3-manylinux1_x86_64.whl",
-        "type": "wheel",
-        "name": "vllm",
-        "version": "0.7.1",
-        "build_tag": null,
-        "python_tag": "cp38",
-        "abi_tag": "abi3",
-        "platform_tag": "manylinux1_x86_64",
-        "url": "https://github.com/vllm-project/vllm/releases/download/v0.7.1/vllm-0.7.1-cp38-abi3-manylinux1_x86_64.whl",
-        "source": "github_release",
-        "release_tag": "v0.7.1",
-        "size": 264196555
-      }
-    ],
     "nightly": [
       {
-        "filename": "vllm-0.9.2rc2.dev346%2Bgdd572c0ab-cp38-abi3-manylinux1_x86_64.whl",
+        "filename": "vllm-0.10.0rc1-cp38-abi3-manylinux1_x86_64.whl",
         "type": "wheel",
         "name": "vllm",
-        "version": "0.9.2rc2.dev346%2Bgdd572c0ab",
+        "version": "0.10.0rc1",
         "build_tag": null,
         "python_tag": "cp38",
         "abi_tag": "abi3",
         "platform_tag": "manylinux1_x86_64",
-        "url": "https://wheels.vllm.ai/nightly/vllm-0.9.2rc2.dev346%2Bgdd572c0ab-cp38-abi3-manylinux1_x86_64.whl",
+        "url": "https://wheels.vllm.ai/nightly/vllm-0.10.0rc1-cp38-abi3-manylinux1_x86_64.whl",
         "source": "nightly"
       }
     ],
