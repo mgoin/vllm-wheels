@@ -1,18 +1,18 @@
 {
-  "last_updated": "2025-08-03T06:06:08.414212",
-  "total_sources": 5,
-  "total_files": 5,
-  "total_wheels": 5,
+  "last_updated": "2025-08-04T06:09:16.437680",
+  "total_sources": 18,
+  "total_files": 44,
+  "total_wheels": 44,
   "source_counts": {
     "commits": 0,
-    "github_releases": 0,
+    "github_releases": 13,
     "nightly": 1,
     "release_versions": 4
   },
   "python_versions": {
-    "cp38": 5
+    "cp38": 44
   },
   "platforms": {
-    "manylinux1_x86_64": 5
+    "manylinux1_x86_64": 44
   }
 }
