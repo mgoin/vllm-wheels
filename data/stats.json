@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-09-13T06:05:32.636882",
+  "last_updated": "2025-09-14T06:05:27.820718",
   "total_sources": 19,
   "total_files": 48,
   "total_wheels": 48,
@@ -13,8 +13,8 @@
     "cp38": 48
   },
   "platforms": {
-    "manylinux1_x86_64": 45,
-    "manylinux1_aarch64": 2,
-    "manylinux2014_aarch64": 1
+    "manylinux1_x86_64": 44,
+    "manylinux2014_aarch64": 2,
+    "manylinux1_aarch64": 2
   }
 }
