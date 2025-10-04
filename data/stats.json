@@ -1,20 +1,20 @@
 {
-  "last_updated": "2025-10-03T06:05:40.953461",
-  "total_sources": 18,
-  "total_files": 45,
-  "total_wheels": 45,
+  "last_updated": "2025-10-04T06:05:15.883880",
+  "total_sources": 19,
+  "total_files": 48,
+  "total_wheels": 48,
   "source_counts": {
     "commits": 0,
-    "github_releases": 13,
+    "github_releases": 14,
     "nightly": 1,
     "release_versions": 4
   },
   "python_versions": {
-    "cp38": 45
+    "cp38": 48
   },
   "platforms": {
-    "manylinux1_x86_64": 41,
-    "manylinux2014_aarch64": 2,
+    "manylinux1_x86_64": 43,
+    "manylinux2014_aarch64": 3,
     "manylinux1_aarch64": 2
   }
 }
