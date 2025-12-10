@@ -1,12 +1,12 @@
 {
-  "scrape_time": "2025-12-09T06:07:04.625565",
+  "scrape_time": "2025-12-10T06:06:48.432425",
   "base_url": "https://wheels.vllm.ai/",
   "mode": "multi-source",
   "sources": {
     "commits": 0,
     "github_releases": 15,
     "nightly": 1,
-    "release_versions": 4
+    "release_versions": 20
   },
   "results": {
     "release_v0.12.0": [
@@ -699,27 +699,27 @@
     ],
     "nightly": [
       {
-        "filename": "vllm-0.11.2.dev685%2Bg58d5b3f51-cp38-abi3-manylinux_2_31_aarch64.whl",
+        "filename": "vllm-0.13.0rc2.dev5%2Bged7af3178-cp38-abi3-manylinux_2_31_aarch64.whl",
         "type": "wheel",
         "name": "vllm",
-        "version": "0.11.2.dev685%2Bg58d5b3f51",
+        "version": "0.13.0rc2.dev5%2Bged7af3178",
         "build_tag": null,
         "python_tag": "cp38",
         "abi_tag": "abi3",
         "platform_tag": "manylinux_2_31_aarch64",
-        "url": "https://wheels.vllm.ai/58d5b3f51455706bf4f1f2360a0feb83d161147e/vllm-0.11.2.dev685%2Bg58d5b3f51-cp38-abi3-manylinux_2_31_aarch64.whl",
+        "url": "https://wheels.vllm.ai/ed7af3178aa24b618be276104e21fdf8b9fcc9f2/vllm-0.13.0rc2.dev5%2Bged7af3178-cp38-abi3-manylinux_2_31_aarch64.whl",
         "source": "nightly"
       },
       {
-        "filename": "vllm-0.11.2.dev685%2Bg58d5b3f51-cp38-abi3-manylinux_2_31_x86_64.whl",
+        "filename": "vllm-0.13.0rc2.dev5%2Bged7af3178-cp38-abi3-manylinux_2_31_x86_64.whl",
         "type": "wheel",
         "name": "vllm",
-        "version": "0.11.2.dev685%2Bg58d5b3f51",
+        "version": "0.13.0rc2.dev5%2Bged7af3178",
         "build_tag": null,
         "python_tag": "cp38",
         "abi_tag": "abi3",
         "platform_tag": "manylinux_2_31_x86_64",
-        "url": "https://wheels.vllm.ai/58d5b3f51455706bf4f1f2360a0feb83d161147e/vllm-0.11.2.dev685%2Bg58d5b3f51-cp38-abi3-manylinux_2_31_x86_64.whl",
+        "url": "https://wheels.vllm.ai/ed7af3178aa24b618be276104e21fdf8b9fcc9f2/vllm-0.13.0rc2.dev5%2Bged7af3178-cp38-abi3-manylinux_2_31_x86_64.whl",
         "source": "nightly"
       }
     ],
@@ -781,6 +781,246 @@
         "url": "https://wheels.vllm.ai/0.9.0/vllm-0.9.0-cp38-abi3-manylinux1_x86_64.whl",
         "source": "release_version",
         "version_directory": "0.9.0"
+      }
+    ],
+    "version_0.8.5.post1": [
+      {
+        "filename": "vllm-0.8.5.post1-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.8.5.post1",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.8.5.post1/vllm-0.8.5.post1-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.8.5.post1"
+      }
+    ],
+    "version_0.8.5": [
+      {
+        "filename": "vllm-0.8.5-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.8.5",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.8.5/vllm-0.8.5-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.8.5"
+      }
+    ],
+    "version_0.8.4": [
+      {
+        "filename": "vllm-0.8.4-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.8.4",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.8.4/vllm-0.8.4-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.8.4"
+      }
+    ],
+    "version_0.8.3": [
+      {
+        "filename": "vllm-0.8.3-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.8.3",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.8.3/vllm-0.8.3-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.8.3"
+      }
+    ],
+    "version_0.8.2": [
+      {
+        "filename": "vllm-0.8.2-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.8.2",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.8.2/vllm-0.8.2-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.8.2"
+      }
+    ],
+    "version_0.8.1": [
+      {
+        "filename": "vllm-0.8.1-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.8.1",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.8.1/vllm-0.8.1-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.8.1"
+      }
+    ],
+    "version_0.8.0": [
+      {
+        "filename": "vllm-0.8.0-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.8.0",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.8.0/vllm-0.8.0-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.8.0"
+      }
+    ],
+    "version_0.7.3": [
+      {
+        "filename": "vllm-0.7.3-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.7.3",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.7.3/vllm-0.7.3-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.7.3"
+      }
+    ],
+    "version_0.7.2": [
+      {
+        "filename": "vllm-0.7.2-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.7.2",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.7.2/vllm-0.7.2-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.7.2"
+      }
+    ],
+    "version_0.7.1": [
+      {
+        "filename": "vllm-0.7.1-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.7.1",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.7.1/vllm-0.7.1-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.7.1"
+      }
+    ],
+    "version_0.7.0": [
+      {
+        "filename": "vllm-0.7.0-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.7.0",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.7.0/vllm-0.7.0-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.7.0"
+      }
+    ],
+    "version_0.6.6.post1": [
+      {
+        "filename": "vllm-0.6.6.post1-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.6.6.post1",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.6.6.post1/vllm-0.6.6.post1-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.6.6.post1"
+      }
+    ],
+    "version_0.6.6": [
+      {
+        "filename": "vllm-0.6.6-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.6.6",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.6.6/vllm-0.6.6-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.6.6"
+      }
+    ],
+    "version_0.6.5": [
+      {
+        "filename": "vllm-0.6.5-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.6.5",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.6.5/vllm-0.6.5-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.6.5"
+      }
+    ],
+    "version_0.6.4.post1": [
+      {
+        "filename": "vllm-0.6.4.post1-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.6.4.post1",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.6.4.post1/vllm-0.6.4.post1-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.6.4.post1"
+      }
+    ],
+    "version_0.6.4": [
+      {
+        "filename": "vllm-0.6.4-cp38-abi3-manylinux1_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.6.4",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux1_x86_64",
+        "url": "https://wheels.vllm.ai/0.6.4/vllm-0.6.4-cp38-abi3-manylinux1_x86_64.whl",
+        "source": "release_version",
+        "version_directory": "0.6.4"
       }
     ]
   }
