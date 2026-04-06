@@ -1,5 +1,5 @@
 {
-  "scrape_time": "2026-04-05T06:27:49.245531",
+  "scrape_time": "2026-04-06T06:39:15.246000",
   "base_url": "https://wheels.vllm.ai/",
   "mode": "multi-source",
   "sources": {
@@ -1337,27 +1337,27 @@
     ],
     "nightly": [
       {
-        "filename": "vllm-0.19.1rc1.dev35%2Bg968ed02ac-cp38-abi3-manylinux_2_31_aarch64.whl",
+        "filename": "vllm-0.19.1rc1.dev45%2Bgf6983f01d-cp38-abi3-manylinux_2_31_aarch64.whl",
         "type": "wheel",
         "name": "vllm",
-        "version": "0.19.1rc1.dev35%2Bg968ed02ac",
+        "version": "0.19.1rc1.dev45%2Bgf6983f01d",
         "build_tag": null,
         "python_tag": "cp38",
         "abi_tag": "abi3",
         "platform_tag": "manylinux_2_31_aarch64",
-        "url": "https://wheels.vllm.ai/968ed02acedf60d9a8128f96cc69a350327a5143/vllm-0.19.1rc1.dev35%2Bg968ed02ac-cp38-abi3-manylinux_2_31_aarch64.whl",
+        "url": "https://wheels.vllm.ai/f6983f01de2bf2e92ab468fa735ebac39cddd670/vllm-0.19.1rc1.dev45%2Bgf6983f01d-cp38-abi3-manylinux_2_31_aarch64.whl",
         "source": "nightly"
       },
       {
-        "filename": "vllm-0.19.1rc1.dev35%2Bg968ed02ac-cp38-abi3-manylinux_2_31_x86_64.whl",
+        "filename": "vllm-0.19.1rc1.dev45%2Bgf6983f01d-cp38-abi3-manylinux_2_31_x86_64.whl",
         "type": "wheel",
         "name": "vllm",
-        "version": "0.19.1rc1.dev35%2Bg968ed02ac",
+        "version": "0.19.1rc1.dev45%2Bgf6983f01d",
         "build_tag": null,
         "python_tag": "cp38",
         "abi_tag": "abi3",
         "platform_tag": "manylinux_2_31_x86_64",
-        "url": "https://wheels.vllm.ai/968ed02acedf60d9a8128f96cc69a350327a5143/vllm-0.19.1rc1.dev35%2Bg968ed02ac-cp38-abi3-manylinux_2_31_x86_64.whl",
+        "url": "https://wheels.vllm.ai/f6983f01de2bf2e92ab468fa735ebac39cddd670/vllm-0.19.1rc1.dev45%2Bgf6983f01d-cp38-abi3-manylinux_2_31_x86_64.whl",
         "source": "nightly"
       }
     ],
