@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-23T06:39:39.174505",
+  "last_updated": "2026-04-24T06:40:31.167615",
   "total_sources": 40,
   "total_files": 117,
   "total_wheels": 117,
@@ -13,10 +13,10 @@
     "cp38": 117
   },
   "platforms": {
-    "manylinux_2_35_aarch64": 24,
-    "manylinux_2_35_x86_64": 24,
-    "manylinux_2_31_aarch64": 14,
-    "manylinux_2_31_x86_64": 15,
+    "manylinux_2_35_aarch64": 25,
+    "manylinux_2_35_x86_64": 25,
+    "manylinux_2_31_aarch64": 13,
+    "manylinux_2_31_x86_64": 14,
     "manylinux1_x86_64": 34,
     "manylinux2014_aarch64": 4,
     "manylinux1_aarch64": 2
