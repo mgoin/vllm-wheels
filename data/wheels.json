@@ -1,5 +1,5 @@
 {
-  "scrape_time": "2026-05-04T07:03:57.010193",
+  "scrape_time": "2026-05-05T06:47:38.069541",
   "base_url": "https://wheels.vllm.ai/",
   "mode": "multi-source",
   "sources": {
@@ -22,7 +22,7 @@
         "url": "https://github.com/vllm-project/vllm/releases/download/v0.20.1/vllm-0.20.1%2Bcpu-cp38-abi3-manylinux_2_35_aarch64.whl",
         "source": "github_release",
         "release_tag": "v0.20.1",
-        "size": 36044509
+        "size": 36044609
       },
       {
         "filename": "vllm-0.20.1+cpu-cp38-abi3-manylinux_2_35_x86_64.whl",
@@ -36,7 +36,7 @@
         "url": "https://github.com/vllm-project/vllm/releases/download/v0.20.1/vllm-0.20.1%2Bcpu-cp38-abi3-manylinux_2_35_x86_64.whl",
         "source": "github_release",
         "release_tag": "v0.20.1",
-        "size": 75798652
+        "size": 75798752
       },
       {
         "filename": "vllm-0.20.1+cu129-cp38-abi3-manylinux_2_31_aarch64.whl",
@@ -50,7 +50,7 @@
         "url": "https://github.com/vllm-project/vllm/releases/download/v0.20.1/vllm-0.20.1%2Bcu129-cp38-abi3-manylinux_2_31_aarch64.whl",
         "source": "github_release",
         "release_tag": "v0.20.1",
-        "size": 422241273
+        "size": 422241415
       },
       {
         "filename": "vllm-0.20.1+cu129-cp38-abi3-manylinux_2_31_x86_64.whl",
@@ -64,7 +64,7 @@
         "url": "https://github.com/vllm-project/vllm/releases/download/v0.20.1/vllm-0.20.1%2Bcu129-cp38-abi3-manylinux_2_31_x86_64.whl",
         "source": "github_release",
         "release_tag": "v0.20.1",
-        "size": 455084785
+        "size": 455084882
       },
       {
         "filename": "vllm-0.20.1-cp38-abi3-manylinux_2_35_aarch64.whl",
@@ -78,7 +78,7 @@
         "url": "https://github.com/vllm-project/vllm/releases/download/v0.20.1/vllm-0.20.1-cp38-abi3-manylinux_2_35_aarch64.whl",
         "source": "github_release",
         "release_tag": "v0.20.1",
-        "size": 235787697
+        "size": 235787780
       },
       {
         "filename": "vllm-0.20.1-cp38-abi3-manylinux_2_35_x86_64.whl",
@@ -92,7 +92,7 @@
         "url": "https://github.com/vllm-project/vllm/releases/download/v0.20.1/vllm-0.20.1-cp38-abi3-manylinux_2_35_x86_64.whl",
         "source": "github_release",
         "release_tag": "v0.20.1",
-        "size": 244425347
+        "size": 244425444
       }
     ],
     "release_v0.20.0": [
@@ -1507,27 +1507,27 @@
     ],
     "nightly": [
       {
-        "filename": "vllm-0.20.2rc1.dev9%2Bg01d4d1ad3-cp38-abi3-manylinux_2_24_aarch64.whl",
+        "filename": "vllm-0.20.2rc1.dev34%2Bg0c620d2e0-cp38-abi3-manylinux_2_24_aarch64.whl",
         "type": "wheel",
         "name": "vllm",
-        "version": "0.20.2rc1.dev9%2Bg01d4d1ad3",
+        "version": "0.20.2rc1.dev34%2Bg0c620d2e0",
         "build_tag": null,
         "python_tag": "cp38",
         "abi_tag": "abi3",
         "platform_tag": "manylinux_2_24_aarch64",
-        "url": "https://wheels.vllm.ai/01d4d1ad375dc5854779c593eee093bcebb0cada/vllm-0.20.2rc1.dev9%2Bg01d4d1ad3-cp38-abi3-manylinux_2_24_aarch64.whl",
+        "url": "https://wheels.vllm.ai/0c620d2e083a49ba40c2a5df318fa246d7e7a59b/vllm-0.20.2rc1.dev34%2Bg0c620d2e0-cp38-abi3-manylinux_2_24_aarch64.whl",
         "source": "nightly"
       },
       {
-        "filename": "vllm-0.20.2rc1.dev9%2Bg01d4d1ad3-cp38-abi3-manylinux_2_24_x86_64.whl",
+        "filename": "vllm-0.20.2rc1.dev34%2Bg0c620d2e0-cp38-abi3-manylinux_2_24_x86_64.whl",
         "type": "wheel",
         "name": "vllm",
-        "version": "0.20.2rc1.dev9%2Bg01d4d1ad3",
+        "version": "0.20.2rc1.dev34%2Bg0c620d2e0",
         "build_tag": null,
         "python_tag": "cp38",
         "abi_tag": "abi3",
         "platform_tag": "manylinux_2_24_x86_64",
-        "url": "https://wheels.vllm.ai/01d4d1ad375dc5854779c593eee093bcebb0cada/vllm-0.20.2rc1.dev9%2Bg01d4d1ad3-cp38-abi3-manylinux_2_24_x86_64.whl",
+        "url": "https://wheels.vllm.ai/0c620d2e083a49ba40c2a5df318fa246d7e7a59b/vllm-0.20.2rc1.dev34%2Bg0c620d2e0-cp38-abi3-manylinux_2_24_x86_64.whl",
         "source": "nightly"
       }
     ],
