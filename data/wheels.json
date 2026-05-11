@@ -1,5 +1,5 @@
 {
-  "scrape_time": "2026-05-10T06:56:00.984059",
+  "scrape_time": "2026-05-11T07:13:47.351882",
   "base_url": "https://wheels.vllm.ai/",
   "mode": "multi-source",
   "sources": {
@@ -9,6 +9,92 @@
     "release_versions": 20
   },
   "results": {
+    "release_v0.20.2": [
+      {
+        "filename": "vllm-0.20.2+cpu-cp38-abi3-manylinux_2_35_aarch64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.20.2+cpu",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux_2_35_aarch64",
+        "url": "https://github.com/vllm-project/vllm/releases/download/v0.20.2/vllm-0.20.2%2Bcpu-cp38-abi3-manylinux_2_35_aarch64.whl",
+        "source": "github_release",
+        "release_tag": "v0.20.2",
+        "size": 36045171
+      },
+      {
+        "filename": "vllm-0.20.2+cpu-cp38-abi3-manylinux_2_35_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.20.2+cpu",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux_2_35_x86_64",
+        "url": "https://github.com/vllm-project/vllm/releases/download/v0.20.2/vllm-0.20.2%2Bcpu-cp38-abi3-manylinux_2_35_x86_64.whl",
+        "source": "github_release",
+        "release_tag": "v0.20.2",
+        "size": 75799316
+      },
+      {
+        "filename": "vllm-0.20.2+cu129-cp38-abi3-manylinux_2_31_aarch64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.20.2+cu129",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux_2_31_aarch64",
+        "url": "https://github.com/vllm-project/vllm/releases/download/v0.20.2/vllm-0.20.2%2Bcu129-cp38-abi3-manylinux_2_31_aarch64.whl",
+        "source": "github_release",
+        "release_tag": "v0.20.2",
+        "size": 422241519
+      },
+      {
+        "filename": "vllm-0.20.2+cu129-cp38-abi3-manylinux_2_31_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.20.2+cu129",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux_2_31_x86_64",
+        "url": "https://github.com/vllm-project/vllm/releases/download/v0.20.2/vllm-0.20.2%2Bcu129-cp38-abi3-manylinux_2_31_x86_64.whl",
+        "source": "github_release",
+        "release_tag": "v0.20.2",
+        "size": 455085432
+      },
+      {
+        "filename": "vllm-0.20.2-cp38-abi3-manylinux_2_35_aarch64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.20.2",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux_2_35_aarch64",
+        "url": "https://github.com/vllm-project/vllm/releases/download/v0.20.2/vllm-0.20.2-cp38-abi3-manylinux_2_35_aarch64.whl",
+        "source": "github_release",
+        "release_tag": "v0.20.2",
+        "size": 235788487
+      },
+      {
+        "filename": "vllm-0.20.2-cp38-abi3-manylinux_2_35_x86_64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.20.2",
+        "build_tag": null,
+        "python_tag": "cp38",
+        "abi_tag": "abi3",
+        "platform_tag": "manylinux_2_35_x86_64",
+        "url": "https://github.com/vllm-project/vllm/releases/download/v0.20.2/vllm-0.20.2-cp38-abi3-manylinux_2_35_x86_64.whl",
+        "source": "github_release",
+        "release_tag": "v0.20.2",
+        "size": 244425988
+      }
+    ],
     "release_v0.20.1": [
       {
         "filename": "vllm-0.20.1+cpu-cp38-abi3-manylinux_2_35_aarch64.whl",
@@ -1461,73 +1547,29 @@
         "size": 436413211
       }
     ],
-    "release_v0.10.1.1": [
-      {
-        "filename": "vllm-0.10.1.1+cu118-cp38-abi3-manylinux1_x86_64.whl",
-        "type": "wheel",
-        "name": "vllm",
-        "version": "0.10.1.1+cu118",
-        "build_tag": null,
-        "python_tag": "cp38",
-        "abi_tag": "abi3",
-        "platform_tag": "manylinux1_x86_64",
-        "url": "https://github.com/vllm-project/vllm/releases/download/v0.10.1.1/vllm-0.10.1.1%2Bcu118-cp38-abi3-manylinux1_x86_64.whl",
-        "source": "github_release",
-        "release_tag": "v0.10.1.1",
-        "size": 250923729
-      },
-      {
-        "filename": "vllm-0.10.1.1-cp38-abi3-manylinux1_aarch64.whl",
-        "type": "wheel",
-        "name": "vllm",
-        "version": "0.10.1.1",
-        "build_tag": null,
-        "python_tag": "cp38",
-        "abi_tag": "abi3",
-        "platform_tag": "manylinux1_aarch64",
-        "url": "https://github.com/vllm-project/vllm/releases/download/v0.10.1.1/vllm-0.10.1.1-cp38-abi3-manylinux1_aarch64.whl",
-        "source": "github_release",
-        "release_tag": "v0.10.1.1",
-        "size": 348634055
-      },
-      {
-        "filename": "vllm-0.10.1.1-cp38-abi3-manylinux1_x86_64.whl",
-        "type": "wheel",
-        "name": "vllm",
-        "version": "0.10.1.1",
-        "build_tag": null,
-        "python_tag": "cp38",
-        "abi_tag": "abi3",
-        "platform_tag": "manylinux1_x86_64",
-        "url": "https://github.com/vllm-project/vllm/releases/download/v0.10.1.1/vllm-0.10.1.1-cp38-abi3-manylinux1_x86_64.whl",
-        "source": "github_release",
-        "release_tag": "v0.10.1.1",
-        "size": 414400912
-      }
-    ],
     "nightly": [
       {
-        "filename": "vllm-0.20.2rc1.dev189%2Bgfb1ac806c-cp38-abi3-manylinux_2_24_aarch64.whl",
+        "filename": "vllm-0.20.2rc1.dev210%2Bg581b5e9af-cp38-abi3-manylinux_2_24_aarch64.whl",
         "type": "wheel",
         "name": "vllm",
-        "version": "0.20.2rc1.dev189%2Bgfb1ac806c",
+        "version": "0.20.2rc1.dev210%2Bg581b5e9af",
         "build_tag": null,
         "python_tag": "cp38",
         "abi_tag": "abi3",
         "platform_tag": "manylinux_2_24_aarch64",
-        "url": "https://wheels.vllm.ai/fb1ac806c55a6dc96fe92261b80c8550e9c39d2f/vllm-0.20.2rc1.dev189%2Bgfb1ac806c-cp38-abi3-manylinux_2_24_aarch64.whl",
+        "url": "https://wheels.vllm.ai/581b5e9afc98b2711c920699326f3e15f928eea9/vllm-0.20.2rc1.dev210%2Bg581b5e9af-cp38-abi3-manylinux_2_24_aarch64.whl",
         "source": "nightly"
       },
       {
-        "filename": "vllm-0.20.2rc1.dev189%2Bgfb1ac806c-cp38-abi3-manylinux_2_24_x86_64.whl",
+        "filename": "vllm-0.20.2rc1.dev210%2Bg581b5e9af-cp38-abi3-manylinux_2_24_x86_64.whl",
         "type": "wheel",
         "name": "vllm",
-        "version": "0.20.2rc1.dev189%2Bgfb1ac806c",
+        "version": "0.20.2rc1.dev210%2Bg581b5e9af",
         "build_tag": null,
         "python_tag": "cp38",
         "abi_tag": "abi3",
         "platform_tag": "manylinux_2_24_x86_64",
-        "url": "https://wheels.vllm.ai/fb1ac806c55a6dc96fe92261b80c8550e9c39d2f/vllm-0.20.2rc1.dev189%2Bgfb1ac806c-cp38-abi3-manylinux_2_24_x86_64.whl",
+        "url": "https://wheels.vllm.ai/581b5e9afc98b2711c920699326f3e15f928eea9/vllm-0.20.2rc1.dev210%2Bg581b5e9af-cp38-abi3-manylinux_2_24_x86_64.whl",
         "source": "nightly"
       }
     ],
