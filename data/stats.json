@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-05-29T07:21:40.780424",
+  "last_updated": "2026-05-30T07:02:01.601189",
   "total_sources": 41,
-  "total_files": 132,
-  "total_wheels": 132,
+  "total_files": 135,
+  "total_wheels": 135,
   "source_counts": {
     "commits": 0,
     "github_releases": 20,
@@ -10,20 +10,20 @@
     "release_versions": 20
   },
   "python_versions": {
-    "cp38": 132
+    "cp38": 135
   },
   "platforms": {
-    "manylinux_2_34_aarch64": 2,
-    "manylinux_2_34_x86_64": 2,
+    "manylinux_2_34_aarch64": 3,
+    "manylinux_2_34_x86_64": 3,
+    "manylinux_2_28_aarch64": 3,
+    "manylinux_2_28_x86_64": 3,
     "manylinux_2_24_aarch64": 1,
     "manylinux_2_24_x86_64": 1,
     "manylinux_2_35_aarch64": 30,
     "manylinux_2_35_x86_64": 30,
     "manylinux_2_31_aarch64": 16,
     "manylinux_2_31_x86_64": 17,
-    "manylinux1_x86_64": 28,
-    "manylinux2014_aarch64": 3,
-    "manylinux_2_28_aarch64": 1,
-    "manylinux_2_28_x86_64": 1
+    "manylinux1_x86_64": 26,
+    "manylinux2014_aarch64": 2
   }
 }
