@@ -1,5 +1,5 @@
 {
-  "scrape_time": "2026-06-28T07:22:35.118891",
+  "scrape_time": "2026-06-29T07:44:34.001172",
   "base_url": "https://wheels.vllm.ai/",
   "mode": "multi-source",
   "sources": {
@@ -1689,15 +1689,15 @@
     ],
     "nightly": [
       {
-        "filename": "vllm-0.23.1rc1.dev532%2Bgc6741b2ad-cp38-abi3-manylinux_2_28_x86_64.whl",
+        "filename": "vllm-0.23.1rc1.dev552%2Bg4559c43a9-cp38-abi3-manylinux_2_28_x86_64.whl",
         "type": "wheel",
         "name": "vllm",
-        "version": "0.23.1rc1.dev532%2Bgc6741b2ad",
+        "version": "0.23.1rc1.dev552%2Bg4559c43a9",
         "build_tag": null,
         "python_tag": "cp38",
         "abi_tag": "abi3",
         "platform_tag": "manylinux_2_28_x86_64",
-        "url": "https://wheels.vllm.ai/c6741b2ad48a46e87d2cce35d113c4ae0950af91/vllm-0.23.1rc1.dev532%2Bgc6741b2ad-cp38-abi3-manylinux_2_28_x86_64.whl",
+        "url": "https://wheels.vllm.ai/4559c43a9526597c00cbcc4f59979496500268d1/vllm-0.23.1rc1.dev552%2Bg4559c43a9-cp38-abi3-manylinux_2_28_x86_64.whl",
         "source": "nightly"
       }
     ],
