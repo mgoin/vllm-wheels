@@ -1,5 +1,5 @@
 {
-  "scrape_time": "2026-07-26T08:20:45.778426",
+  "scrape_time": "2026-07-27T09:42:26.568280",
   "base_url": "https://wheels.vllm.ai/",
   "mode": "multi-source",
   "sources": {
@@ -10,6 +10,20 @@
   },
   "results": {
     "release_v0.26.0": [
+      {
+        "filename": "vllm-0.26.0+cpu-cp312-cp312-macosx_11_0_arm64.whl",
+        "type": "wheel",
+        "name": "vllm",
+        "version": "0.26.0+cpu",
+        "build_tag": null,
+        "python_tag": "cp312",
+        "abi_tag": "cp312",
+        "platform_tag": "macosx_11_0_arm64",
+        "url": "https://github.com/vllm-project/vllm/releases/download/v0.26.0/vllm-0.26.0%2Bcpu-cp312-cp312-macosx_11_0_arm64.whl",
+        "source": "github_release",
+        "release_tag": "v0.26.0",
+        "size": 20732570
+      },
       {
         "filename": "vllm-0.26.0+cpu-cp38-abi3-manylinux_2_34_aarch64.whl",
         "type": "wheel",
