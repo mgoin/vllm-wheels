@@ -52,9 +52,6 @@ jobs:
             --max-github-releases "${{ inputs.max_github_releases || '0' }}" \
             --recent-commits "${{ inputs.recent_commits || '20' }}"
 
-      - name: Validate static site build
-        run: python scripts/build_site.py
-
       - name: Commit refreshed data
         run: |
           git config --local user.email "action@github.com"

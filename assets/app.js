@@ -450,4 +450,3 @@ function relativeTime(value) {
 }
 
 init();
-

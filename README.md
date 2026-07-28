@@ -47,17 +47,17 @@ The command writes:
 - `data/stats.json` — summary counts
 - `data/schema.json` — JSON Schema for consumers
 
-## Build the site
+## Preview the site
 
-The site intentionally has no runtime framework or package-manager dependency:
+The site intentionally has no build step, runtime framework, or package-manager
+dependency. GitHub Pages serves it directly from the repository root. To preview
+the same layout locally:
 
 ```bash
-python scripts/build_site.py
-python -m http.server 8000 --directory dist/client
+python -m http.server 8000
 ```
 
-The build copies the static application and current data into `dist/client` and
-creates the small worker entry point used by the production host.
+Then open `http://localhost:8000`.
 
 ## Project structure
 
@@ -73,12 +73,11 @@ src/vllm_wheels/
 └── sources/
     ├── github.py
     └── vllm_index.py
-site/
-├── assets/
-├── index.html
-└── og.png
-scripts/
-└── build_site.py
+assets/
+├── app.js
+└── styles.css
+index.html
+og.png
 tests/
 data/
 ```
@@ -101,7 +100,8 @@ aliases, ROCm indexes, URL encoding, install commands, and output generation.
 
 - `Refresh wheel index` runs daily, tests the scraper, refreshes all data, and
   commits changes.
-- `Deploy static site` publishes `dist/client` through GitHub Pages whenever the
-  site or data changes.
+- The repository's existing GitHub Pages configuration serves `main` from the
+  repository root, so site and data changes publish without a separate build or
+  deployment workflow.
 
 This is a community project and is not an official vLLM property.
