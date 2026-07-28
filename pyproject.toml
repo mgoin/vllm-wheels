@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vllm-wheel-index"
+version = "2.0.0"
+description = "Build a searchable index of vLLM wheels from GitHub and wheels.vllm.ai"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "packaging>=24.0",
+]
+
+[project.scripts]
+vllm-wheel-index = "vllm_wheels.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

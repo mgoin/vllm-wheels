@@ -1,30 +1,42 @@
 {
-  "last_updated": "2026-07-28T08:27:00.149024",
-  "total_sources": 41,
-  "total_files": 143,
-  "total_wheels": 143,
-  "source_counts": {
-    "commits": 0,
-    "github_releases": 20,
-    "nightly": 1,
-    "release_versions": 20
+  "schema_version": 2,
+  "generated_at": "2026-07-28T19:18:42.299797Z",
+  "total_records": 831,
+  "unique_wheels": 739,
+  "release_versions": 86,
+  "latest_release": "0.26.0",
+  "channels": {
+    "commit": 76,
+    "nightly": 5,
+    "release": 750
   },
-  "python_versions": {
-    "cp312": 1,
-    "cp38": 142
+  "sources": {
+    "github": 445,
+    "wheels.vllm.ai": 386
   },
-  "platforms": {
-    "macosx_11_0_arm64": 1,
-    "manylinux_2_34_aarch64": 9,
-    "manylinux_2_34_x86_64": 9,
-    "manylinux_2_28_aarch64": 15,
-    "manylinux_2_28_x86_64": 15,
-    "manylinux_2_24_aarch64": 1,
-    "manylinux_2_24_x86_64": 1,
-    "manylinux_2_35_aarch64": 24,
-    "manylinux_2_35_x86_64": 24,
-    "manylinux_2_31_aarch64": 12,
-    "manylinux_2_31_x86_64": 12,
-    "manylinux1_x86_64": 20
+  "variants": {
+    "cpu": 100,
+    "cu118": 161,
+    "cu121": 14,
+    "cu126": 11,
+    "cu129": 82,
+    "cu130": 118,
+    "default": 316,
+    "rocm700": 10,
+    "rocm721": 7,
+    "rocm722": 4,
+    "rocm723": 8
+  },
+  "architectures": {
+    "aarch64": 224,
+    "arm64": 2,
+    "x86_64": 605
+  },
+  "python_tags": {
+    "cp310": 56,
+    "cp311": 56,
+    "cp312": 38,
+    "cp38": 625,
+    "cp39": 56
   }
 }

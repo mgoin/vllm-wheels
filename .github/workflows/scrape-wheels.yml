@@ -1,74 +1,68 @@
-name: Scrape vLLM Wheels
+name: Refresh wheel index
 
 on:
   workflow_dispatch:
     inputs:
-      max_commits:
-        description: 'Maximum number of commits to check'
-        required: false
-        default: '50'
-        type: string
-      max_releases:
-        description: 'Maximum number of GitHub releases to check'
-        required: false
-        default: '20'
-        type: string
       max_versions:
-        description: 'Maximum number of PyPI versions to check'
+        description: "Maximum PyPI versions to inspect (0 = all)"
         required: false
-        default: '20'
+        default: "0"
         type: string
-      wheels_only:
-        description: 'Only include wheel files (no source distributions)'
+      max_github_releases:
+        description: "Maximum GitHub releases to inspect (0 = all)"
         required: false
-        default: true
-        type: boolean
+        default: "0"
+        type: string
+      recent_commits:
+        description: "Recent main-branch commits to inspect"
+        required: false
+        default: "20"
+        type: string
   schedule:
-    # Run daily at 6 AM UTC
-    - cron: '0 6 * * *'
+    - cron: "0 6 * * *"
 
 jobs:
-  scrape-wheels:
+  refresh:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
-    
-    - name: Run wheel scraper
-      run: |
-        python3 scrape_vllm_wheels.py \
-          --all-sources \
-          --max-commits ${{ github.event.inputs.max_commits || '50' }} \
-          --max-releases ${{ github.event.inputs.max_releases || '20' }} \
-          --max-versions ${{ github.event.inputs.max_versions || '20' }} \
-          ${{ github.event.inputs.wheels_only == 'true' && '--wheels-only' || '' }} \
-          --output data/wheels.json \
-          --verbose
-    
-    - name: Generate CSV file
-      run: python3 generate_csv.py
-    
-    - name: Generate summary stats
-      run: python3 generate_stats.py
-    
-    - name: Commit and push changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add data/
-        
-        # Check if there are changes to commit
-        if git diff --staged --quiet; then
-          echo "No changes to commit"
-        else
-          git commit -m "Update wheel data - $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
-          git push
-        fi 
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install index builder
+        run: python -m pip install .
+
+      - name: Run tests
+        run: python -m unittest discover -v
+
+      - name: Refresh all wheel sources
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python -m vllm_wheels \
+            --max-versions "${{ inputs.max_versions || '0' }}" \
+            --max-github-releases "${{ inputs.max_github_releases || '0' }}" \
+            --recent-commits "${{ inputs.recent_commits || '20' }}"
+
+      - name: Validate static site build
+        run: python scripts/build_site.py
+
+      - name: Commit refreshed data
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No data changes to commit"
+          else
+            git commit -m "Refresh wheel index"
+            git push
+          fi

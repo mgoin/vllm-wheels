@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Search every indexed vLLM release, nightly, and recent commit wheel across CUDA, CPU, ROCm, architectures, and Python tags.">
+    <meta name="theme-color" content="#f5f1e8">
+    <link rel="canonical" href="https://mgoin.github.io/vllm-wheels/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="vLLM Wheel Explorer">
+    <meta property="og:description" content="Every build. One searchable index.">
+    <meta property="og:url" content="https://mgoin.github.io/vllm-wheels/">
+    <meta property="og:image" content="https://mgoin.github.io/vllm-wheels/og.png">
+    <meta property="og:image:width" content="1731">
+    <meta property="og:image:height" content="909">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="vLLM Wheel Explorer">
+    <meta name="twitter:description" content="Every build. One searchable index.">
+    <meta name="twitter:image" content="https://mgoin.github.io/vllm-wheels/og.png">
+    <title>vLLM Wheel Explorer — Every build, one searchable index</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script type="module" src="assets/app.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#explorer">Skip to wheel explorer</a>
+
+    <header class="site-header">
+        <a class="brand" href="./" aria-label="vLLM Wheel Explorer home">
+            <span class="brand-mark" aria-hidden="true">v/</span>
+            <span>Wheel Explorer</span>
+        </a>
+        <nav aria-label="Primary navigation">
+            <a href="https://vllm.ai/#quick-start">Quick start</a>
+            <a href="https://vllm.ai/releases">Official releases</a>
+            <a href="https://github.com/mgoin/vllm-wheels">Source</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="page-title">
+            <div class="hero-copy">
+                <p class="eyebrow">Community-built developer index</p>
+                <h1 id="page-title">Every build.<br>One searchable index.</h1>
+                <p class="hero-lede">
+                    Find the exact vLLM wheel for your backend, architecture, and
+                    Python environment—without spelunking through release assets
+                    or package indexes.
+                </p>
+                <div class="hero-links">
+                    <a class="button button-primary" href="#explorer">Explore wheels</a>
+                    <a class="button button-secondary" href="data/wheels.json">Use the JSON</a>
+                </div>
+            </div>
+
+            <aside class="quick-install" aria-labelledby="quick-install-title">
+                <div class="terminal-heading">
+                    <span id="quick-install-title">Latest stable</span>
+                    <span id="latest-version" class="terminal-version">loading</span>
+                </div>
+                <div class="command-block">
+                    <span class="prompt" aria-hidden="true">$</span>
+                    <code id="latest-command">uv pip install vllm --torch-backend auto</code>
+                </div>
+                <div class="terminal-actions">
+                    <button class="text-button" id="copy-latest" type="button">Copy command</button>
+                    <a href="https://docs.vllm.ai/en/stable/getting_started/installation/">Installation docs</a>
+                </div>
+            </aside>
+        </section>
+
+        <section class="stat-strip" aria-label="Index summary">
+            <div>
+                <strong id="stat-wheels">—</strong>
+                <span>indexed entries</span>
+            </div>
+            <div>
+                <strong id="stat-releases">—</strong>
+                <span>release versions</span>
+            </div>
+            <div>
+                <strong id="stat-variants">—</strong>
+                <span>build variants</span>
+            </div>
+            <div>
+                <strong id="stat-updated">—</strong>
+                <span>last refreshed</span>
+            </div>
+        </section>
+
+        <section class="explorer" id="explorer" aria-labelledby="explorer-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">The full index</p>
+                    <h2 id="explorer-title">Find your wheel</h2>
+                </div>
+                <p>Search filenames, versions, commit SHAs, platform tags, and variants.</p>
+            </div>
+
+            <div class="channel-tabs" role="group" aria-label="Build channel">
+                <button class="channel-tab is-active" type="button" data-channel="">All <span data-count="all">0</span></button>
+                <button class="channel-tab" type="button" data-channel="release">Releases <span data-count="release">0</span></button>
+                <button class="channel-tab" type="button" data-channel="nightly">Nightly <span data-count="nightly">0</span></button>
+                <button class="channel-tab" type="button" data-channel="commit">Recent commits <span data-count="commit">0</span></button>
+            </div>
+
+            <form class="filter-panel" id="filters" role="search">
+                <label class="search-field">
+                    <span>Search wheels</span>
+                    <input id="search" type="search" placeholder="Try 0.26.0, rocm723, aarch64…" autocomplete="off">
+                    <kbd>/</kbd>
+                </label>
+                <label>
+                    <span>Source</span>
+                    <select id="source-filter">
+                        <option value="">All sources</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Variant</span>
+                    <select id="variant-filter">
+                        <option value="">All variants</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Architecture</span>
+                    <select id="architecture-filter">
+                        <option value="">All architectures</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Python</span>
+                    <select id="python-filter">
+                        <option value="">All Python tags</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Sort</span>
+                    <select id="sort-filter">
+                        <option value="newest">Newest first</option>
+                        <option value="oldest">Oldest first</option>
+                        <option value="filename">Filename A–Z</option>
+                    </select>
+                </label>
+            </form>
+
+            <div class="results-toolbar">
+                <p id="results-summary" aria-live="polite">Loading wheel data…</p>
+                <div>
+                    <button class="text-button" id="share-view" type="button">Copy view link</button>
+                    <button class="text-button" id="reset-filters" type="button">Reset filters</button>
+                </div>
+            </div>
+
+            <div class="table-shell" id="table-shell" hidden>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Build</th>
+                            <th scope="col">Source</th>
+                            <th scope="col">Variant</th>
+                            <th scope="col">Python</th>
+                            <th scope="col">Platform</th>
+                            <th scope="col">Install</th>
+                        </tr>
+                    </thead>
+                    <tbody id="wheel-rows"></tbody>
+                </table>
+            </div>
+
+            <div class="empty-state" id="empty-state" hidden>
+                <strong>No matching wheels.</strong>
+                <p>Try removing a filter or searching for a broader platform tag.</p>
+                <button class="button button-secondary" type="button" id="empty-reset">Reset filters</button>
+            </div>
+
+            <nav class="pagination" id="pagination" aria-label="Results pages" hidden>
+                <button class="button button-secondary" id="previous-page" type="button">Previous</button>
+                <span id="page-status">Page 1 of 1</span>
+                <button class="button button-secondary" id="next-page" type="button">Next</button>
+            </nav>
+
+            <noscript>
+                <div class="empty-state">
+                    JavaScript is required for interactive filtering. The complete
+                    dataset is still available as
+                    <a href="data/wheels.json">JSON</a> or
+                    <a href="data/wheels.csv">CSV</a>.
+                </div>
+            </noscript>
+        </section>
+
+        <section class="data-section" aria-labelledby="data-title">
+            <div>
+                <p class="eyebrow">Built for scripts, too</p>
+                <h2 id="data-title">Take the index with you.</h2>
+                <p>
+                    Every record uses the same explicit schema across GitHub,
+                    release indexes, nightlies, and commit builds. No key-prefix
+                    guessing required.
+                </p>
+            </div>
+            <div class="data-links">
+                <a href="data/wheels.json">
+                    <span>JSON dataset</span>
+                    <code>data/wheels.json</code>
+                </a>
+                <a href="data/wheels.csv">
+                    <span>CSV export</span>
+                    <code>data/wheels.csv</code>
+                </a>
+                <a href="data/schema.json">
+                    <span>JSON Schema</span>
+                    <code>data/schema.json</code>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            A community index built from
+            <a href="https://wheels.vllm.ai/">wheels.vllm.ai</a> and
+            <a href="https://github.com/vllm-project/vllm/releases">GitHub releases</a>.
+            Not an official vLLM project.
+        </p>
+        <p>
+            <a href="https://github.com/mgoin/vllm-wheels">View source</a>
+            <span aria-hidden="true">·</span>
+            <a href="https://docs.vllm.ai/en/stable/contributing/ci/nightly_builds/">How vLLM wheel indexes work</a>
+        </p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

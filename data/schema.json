@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mgoin.github.io/vllm-wheels/data/schema.json",
+  "title": "vLLM wheel index",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "stats",
+    "warnings",
+    "wheels"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "stats": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "wheels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "abi_tag",
+          "architecture",
+          "build_tag",
+          "channel",
+          "commit",
+          "download_url",
+          "effective_variant",
+          "filename",
+          "id",
+          "index_family",
+          "index_url",
+          "index_variant",
+          "install_command",
+          "operating_system",
+          "platform_tag",
+          "published_at",
+          "python_tag",
+          "release",
+          "size",
+          "source",
+          "source_url",
+          "version",
+          "wheel_variant"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "channel": {
+            "enum": [
+              "release",
+              "nightly",
+              "commit"
+            ]
+          },
+          "filename": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "release": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "commit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "build_tag": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "python_tag": {
+            "type": "string"
+          },
+          "abi_tag": {
+            "type": "string"
+          },
+          "platform_tag": {
+            "type": "string"
+          },
+          "architecture": {
+            "type": "string"
+          },
+          "operating_system": {
+            "type": "string"
+          },
+          "index_family": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "index_variant": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "wheel_variant": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "effective_variant": {
+            "type": "string"
+          },
+          "index_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "download_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "source_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "install_command": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "size": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
