@@ -41,4 +41,3 @@ class OutputTests(TestCase):
             self.assertTrue((output_dir / "wheels.csv").exists())
             self.assertTrue((output_dir / "stats.json").exists())
             self.assertTrue((output_dir / "schema.json").exists())
-

@@ -69,4 +69,3 @@ class WheelRecord:
         record["effective_variant"] = self.effective_variant
         record["install_command"] = self.install_command
         return record
-

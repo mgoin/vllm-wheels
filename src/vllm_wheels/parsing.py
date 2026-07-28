@@ -95,4 +95,3 @@ def commit_from_url(url: str) -> str | None:
         if COMMIT_PATTERN.fullmatch(segment):
             return segment
     return None
-

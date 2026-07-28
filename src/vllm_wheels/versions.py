@@ -28,4 +28,3 @@ def get_pypi_versions(client: HttpClient, limit: int | None = None) -> list[str]
         [version for version, files in releases.items() if files]
     )
     return versions[:limit] if limit else versions
-

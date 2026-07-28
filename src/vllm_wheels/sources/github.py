@@ -103,4 +103,3 @@ class GitHubSource:
                 )
             )
         return records
-

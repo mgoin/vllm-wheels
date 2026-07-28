@@ -17,4 +17,3 @@ class VersionSortingTests(TestCase):
             sort_versions(versions),
             ["0.26.0", "0.26.0rc1", "0.10.0", "0.9.2", "0.9.0.1"],
         )
-

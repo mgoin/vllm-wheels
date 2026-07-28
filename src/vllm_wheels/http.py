@@ -82,4 +82,3 @@ class HttpClient:
             return json.loads(text)
         except json.JSONDecodeError as error:
             raise FetchError(url, f"invalid JSON ({error})") from error
-

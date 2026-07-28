@@ -114,4 +114,3 @@ class WheelsIndexSourceTests(TestCase):
         self.assertEqual(len(records), 1)
         self.assertEqual(records[0].index_family, "rocm")
         self.assertEqual(records[0].effective_variant, "rocm723")
-
