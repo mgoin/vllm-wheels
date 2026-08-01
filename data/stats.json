@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-31T08:43:35.928799Z",
-  "total_records": 833,
-  "unique_wheels": 741,
+  "generated_at": "2026-08-01T08:13:32.410503Z",
+  "total_records": 837,
+  "unique_wheels": 743,
   "release_versions": 86,
   "latest_release": "0.26.0",
   "channels": {
-    "commit": 78,
+    "commit": 82,
     "nightly": 5,
     "release": 750
   },
   "sources": {
     "github": 445,
-    "wheels.vllm.ai": 388
+    "wheels.vllm.ai": 392
   },
   "variants": {
     "cpu": 102,
@@ -20,23 +20,23 @@
     "cu121": 14,
     "cu126": 11,
     "cu129": 82,
-    "cu130": 118,
-    "default": 316,
+    "cu130": 120,
+    "default": 318,
     "rocm700": 10,
     "rocm721": 7,
     "rocm722": 4,
     "rocm723": 8
   },
   "architectures": {
-    "aarch64": 225,
+    "aarch64": 227,
     "arm64": 2,
-    "x86_64": 606
+    "x86_64": 608
   },
   "python_tags": {
     "cp310": 56,
     "cp311": 56,
     "cp312": 38,
-    "cp38": 627,
+    "cp38": 631,
     "cp39": 56
   }
 }
